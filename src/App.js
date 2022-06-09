@@ -11,6 +11,8 @@ class App extends Component {
     this.inputChange = this.inputChange.bind(this);
     this.addSchool = this.addSchool.bind(this);
     this.addJob = this.addJob.bind(this);
+    this.removeSchool = this.removeSchool.bind(this);
+    this.removeJob = this.removeJob.bind(this);
     // inputs for testing
     // inputs: {
     //   name: 'Lisa Frank',
@@ -51,12 +53,31 @@ class App extends Component {
       inputs: newInputs,
     });
   }
+  removeSchool() {
+    const newEds = this.state.inputs.education.slice(0, -1);
+    const newInputs = this.state.inputs;
+    newInputs.education = newEds;
+
+    this.setState({
+      inputs: newInputs,
+    });
+  }
 
   addJob() {
     const newWork = [
       ...this.state.inputs.work,
       { company: '', title: '', startDate: '', endDate: '' },
     ];
+    const newInputs = this.state.inputs;
+    newInputs.work = newWork;
+
+    this.setState({
+      inputs: newInputs,
+    });
+  }
+
+  removeJob() {
+    const newWork = this.state.inputs.work.slice(0, -1);
     const newInputs = this.state.inputs;
     newInputs.work = newWork;
 
@@ -101,7 +122,9 @@ class App extends Component {
         inputs={this.state.inputs}
         inputChange={this.inputChange}
         addSchool={this.addSchool}
+        removeSchool={this.removeSchool}
         addJob={this.addJob}
+        removeJob={this.removeJob}
       />
     );
     return <div className="container">{content}</div>;

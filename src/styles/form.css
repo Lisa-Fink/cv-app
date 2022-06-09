@@ -43,3 +43,13 @@ button:hover{
 .ed-start, .job-start {
     margin-top: 15px;
 }
+
+#submit-btn {
+    background-color: rgb(20, 20, 20);
+    color:white;
+    margin-top: 35px;
+}
+
+#submit-btn:hover {
+    background-color: rgb(50,50,50);
+}

@@ -22,13 +22,15 @@ export default class Form extends Component {
           inputs={this.props.inputs}
           inputChange={this.props.inputChange}
           addSchool={this.props.addSchool}
+          removeSchool={this.props.removeSchool}
         />
         <Work
           inputs={this.props.inputs}
           inputChange={this.props.inputChange}
           addJob={this.props.addJob}
+          removeJob={this.props.removeJob}
         />
-        <button>Submit</button>
+        <button id="submit-btn">Submit</button>
       </form>
     );
   }

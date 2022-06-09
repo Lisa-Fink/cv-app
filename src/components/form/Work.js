@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Job from './Job';
+import RmButton from './RmButton';
 
 class Work extends Component {
   constructor(props) {
@@ -21,6 +22,12 @@ class Work extends Component {
         <legend>Work Experience</legend>
         {jobDivs}
         <button onClick={this.props.addJob}>Add Job</button>
+        <RmButton
+          func={this.props.removeJob}
+          category="Job"
+          inputs={this.props.inputs}
+          propName="work"
+        />
       </div>
     );
   }

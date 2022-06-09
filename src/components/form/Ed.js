@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import RmButton from './RmButton';
 import School from './School';
 
 class Ed extends Component {
@@ -24,6 +25,12 @@ class Ed extends Component {
         {edDivs}
 
         <button onClick={this.props.addSchool}>Add School</button>
+        <RmButton
+          func={this.props.removeSchool}
+          category="School"
+          inputs={this.props.inputs}
+          propName="education"
+        />
       </div>
     );
   }
