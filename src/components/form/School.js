@@ -12,7 +12,7 @@ export default class School extends Component {
     return (
       <div id="ed-start">
         <div>
-          <label htmlFor="school">School Name </label>
+          <label htmlFor={`education-school-${index}`}>School Name </label>
           <input
             value={inputs.education[index].school}
             onChange={this.props.inputChange}
@@ -22,7 +22,7 @@ export default class School extends Component {
           ></input>
         </div>
         <div>
-          <label htmlFor="degree">Degree Earned </label>
+          <label htmlFor={`education-degree-${index}`}>Degree Earned </label>
           <input
             value={inputs.education[index].degree}
             onChange={this.props.inputChange}
@@ -32,7 +32,7 @@ export default class School extends Component {
           ></input>
         </div>
         <div>
-          <label htmlFor="major">Major </label>
+          <label htmlFor={`education-major-${index}`}>Major </label>
           <input
             value={inputs.education[index].major}
             onChange={this.props.inputChange}
@@ -42,7 +42,7 @@ export default class School extends Component {
           ></input>
         </div>
         <div>
-          <label htmlFor="grad">Graduation Date </label>
+          <label htmlFor={`education-grad-${index}`}>Graduation Date </label>
           <input
             value={inputs.education[index].grad}
             onChange={this.props.inputChange}
