@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import School from './School';
 
 class Ed extends Component {
   constructor(props) {
@@ -6,51 +7,25 @@ class Ed extends Component {
 
     this.state = {};
   }
+
   render() {
     const inputs = this.props.inputs;
+
+    const edDivs = this.props.inputs.education.map((school, index) => (
+      <School
+        key={index}
+        inputs={this.props.inputs}
+        index={index}
+        inputChange={this.props.inputChange}
+      />
+    ));
+
     return (
-      <div>
+      <div id="ed">
         <legend>Education</legend>
-        <div>
-          <label htmlFor="school">School Name </label>
-          <input
-            value={inputs.school}
-            onChange={this.props.inputChange}
-            id="school"
-            type="text"
-            required
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="degree">Degree Earned </label>
-          <input
-            value={inputs.degree}
-            onChange={this.props.inputChange}
-            id="degree"
-            type="text"
-            required
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="major">Major </label>
-          <input
-            value={inputs.major}
-            onChange={this.props.inputChange}
-            id="major"
-            type="text"
-            required
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="grad">Graduation Date </label>
-          <input
-            value={inputs.grad}
-            onChange={this.props.inputChange}
-            id="grad"
-            type="text"
-            required
-          ></input>
-        </div>
+        {edDivs}
+
+        <button onClick={this.props.addSchool}>Add School</button>
       </div>
     );
   }

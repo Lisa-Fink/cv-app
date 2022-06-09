@@ -18,7 +18,11 @@ export default class Form extends Component {
           inputs={this.props.inputs}
           inputChange={this.props.inputChange}
         />
-        <Ed inputs={this.props.inputs} inputChange={this.props.inputChange} />
+        <Ed
+          inputs={this.props.inputs}
+          inputChange={this.props.inputChange}
+          addSchool={this.props.addSchool}
+        />
         <Work inputs={this.props.inputs} inputChange={this.props.inputChange} />
         <button>Submit</button>
       </form>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../styles/content.css';
+import SchoolCv from './SchoolCv';
 
 export default class Content extends Component {
   constructor(props) {
@@ -13,6 +13,10 @@ export default class Content extends Component {
       return date ? date : 'Present';
     };
     const inputs = this.props.inputs;
+
+    const schools = inputs.education.map((school, index) => (
+      <SchoolCv index={index} inputs={inputs} />
+    ));
     return (
       <div id="content">
         <div id="experience">
@@ -23,13 +27,8 @@ export default class Content extends Component {
             Dates Employed: {inputs.startDate} - {formatEndDate(inputs.endDate)}
           </div>
         </div>
-        <div id="education">
-          <h2>Education</h2>
-          <div id="school">{inputs.school}</div>
-          <div>Degree Earned: {inputs.degree}</div>
-          <div>Major: {inputs.major}</div>
-          <div>Graduated: {inputs.grad}</div>
-        </div>
+        <h2>Education</h2>
+        {schools}
       </div>
     );
   }

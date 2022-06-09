@@ -9,6 +9,7 @@ class App extends Component {
     this.submitForm = this.submitForm.bind(this);
     this.editForm = this.editForm.bind(this);
     this.inputChange = this.inputChange.bind(this);
+    this.addSchool = this.addSchool.bind(this);
     // inputs for testing
     // inputs: {
     //   name: 'Lisa Frank',
@@ -31,10 +32,7 @@ class App extends Component {
         jobTitle: '',
         email: '',
         phone: '',
-        school: '',
-        degree: '',
-        major: '',
-        grad: '',
+        education: [{ school: '', degree: '', major: '', grad: '' }],
         company: '',
         title: '',
         startDate: '',
@@ -43,9 +41,30 @@ class App extends Component {
       formComplete: false,
     };
   }
+  addSchool() {
+    const newEds = [
+      ...this.state.inputs.education,
+      { school: '', degree: '', major: '', grad: '' },
+    ];
+    const newInputs = this.state.inputs;
+    newInputs.education = newEds;
+
+    this.setState({
+      inputs: newInputs,
+    });
+  }
+
   inputChange(e) {
     let newInputs = this.state.inputs;
-    newInputs[e.target.id] = e.target.value;
+    const id = e.target.id;
+
+    if ((id.slice(0, 4) === 'educ') | id.slice(0, 4 === 'work')) {
+      let [mainProp, propName, index] = id.split('-');
+      newInputs[mainProp][index][propName] = e.target.value;
+    } else {
+      newInputs[id] = e.target.value;
+    }
+
     this.setState({
       inputs: newInputs,
     });
@@ -57,10 +76,8 @@ class App extends Component {
   }
   submitForm(e) {
     e.preventDefault();
-    const inputs = this.state.inputs;
 
     this.setState({
-      inputs: inputs,
       formComplete: true,
     });
   }
@@ -72,6 +89,7 @@ class App extends Component {
         submit={this.submitForm}
         inputs={this.state.inputs}
         inputChange={this.inputChange}
+        addSchool={this.addSchool}
       />
     );
     return <div className="container">{content}</div>;
