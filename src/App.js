@@ -57,38 +57,10 @@ class App extends Component {
   }
   submitForm(e) {
     e.preventDefault();
-    let [
-      name,
-      jobTitle,
-      email,
-      phone,
-      school,
-      degree,
-      major,
-      grad,
-      company,
-      title,
-      startDate,
-      endDate,
-    ] = [...e.target].slice(0, -1).map((input) => input.value);
-
-    let newData = {
-      name,
-      jobTitle,
-      email,
-      phone,
-      school,
-      degree,
-      major,
-      grad,
-      company,
-      title,
-      startDate,
-      endDate,
-    };
+    const inputs = this.state.inputs;
 
     this.setState({
-      inputs: newData,
+      inputs: inputs,
       formComplete: true,
     });
   }
