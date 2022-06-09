@@ -9,8 +9,6 @@ class Ed extends Component {
   }
 
   render() {
-    const inputs = this.props.inputs;
-
     const edDivs = this.props.inputs.education.map((school, index) => (
       <School
         key={index}
