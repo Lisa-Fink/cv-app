@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import Cv from './components/Cv';
 import Form from './components/Form';
+import './styles/app.css';
 
 class App extends Component {
   constructor(props) {
@@ -7,7 +9,20 @@ class App extends Component {
     this.submitForm = this.submitForm.bind(this);
 
     this.state = {
-      inputs: {},
+      inputs: {
+        // name: 'Lisa Frank',
+        // jobTitle: 'Full Stack Web Developer',
+        // email: 'lisa@email.email',
+        // phone: 5555555555,
+        // school: 'Fake School University',
+        // degree: "Bachelor's of Fake",
+        // major: 'Computer Science',
+        // grad: 'Fake 999',
+        // company: 'Fake Company',
+        // title: 'CEO',
+        // startDate: '1/1/1',
+        // endDate: '9/9/9',
+      },
       formComplete: false,
     };
   }
@@ -16,10 +31,12 @@ class App extends Component {
     console.log(this.state);
     let [
       name,
+      jobTitle,
       email,
       phone,
       school,
       degree,
+      major,
       grad,
       company,
       title,
@@ -29,10 +46,12 @@ class App extends Component {
 
     let newData = {
       name,
+      jobTitle,
       email,
       phone,
       school,
       degree,
+      major,
       grad,
       company,
       title,
@@ -47,11 +66,11 @@ class App extends Component {
   }
   render() {
     const content = this.state.formComplete ? (
-      'form complete'
+      <Cv inputs={this.state.inputs} />
     ) : (
       <Form submit={this.submitForm} />
     );
-    return <div>{content}</div>;
+    return <div className="container">{content}</div>;
   }
 }
 
