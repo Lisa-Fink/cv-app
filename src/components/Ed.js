@@ -9,7 +9,14 @@ class Ed extends Component {
   render() {
     return (
       <div>
-        <legend>General Info</legend>
+        <legend>Education</legend>
+
+        <label htmlFor="school">School Name:</label>
+        <input id="school" type="text" required></input>
+        <label htmlFor="degree">Degree Earned</label>
+        <input id="degree" type="text" required></input>
+        <label htmlFor="grad">Graduation Date</label>
+        <input id="grad" type="text" required></input>
       </div>
     );
   }
