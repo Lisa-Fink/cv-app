@@ -29,6 +29,6 @@ h3 {
     margin-top:20px
 }
 
-#education {
+.education, .experience {
     margin-top: 10px;
 }

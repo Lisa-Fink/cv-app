@@ -10,7 +10,7 @@ export default class SchoolCv extends Component {
     const inputs = this.props.inputs;
     const index = this.props.index;
     return (
-      <div id="education">
+      <div className="education">
         <div id="school">{inputs.education[index].school}</div>
         <div>Degree Earned: {inputs.education[index].degree}</div>
         <div>Major: {inputs.education[index].major}</div>
