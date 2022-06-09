@@ -2,6 +2,12 @@
     background-color: white;
     box-shadow: 2px 2px 2px 2px black;
     border-radius: 3px;
+    width: 960px;
+    margin: 0 auto
     
 }
 
+body {
+    background-color: rgb(35, 35, 35);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

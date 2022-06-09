@@ -1,0 +1,41 @@
+legend {
+    font-size: 34px;
+    margin: 20px 5px 5px 5px;
+    text-align: center;
+}
+
+form {
+    padding: 40px;
+    background-color: rgb(237, 237, 237);
+    font-size: 18px;
+}
+
+form > h1 {
+    text-align: center;
+}
+
+form >div >div {
+    display: grid
+}
+
+input {
+    border: none;
+    padding: 5px;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+button {
+    border: none;
+    background-color: darkgray;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: stretch;
+    font-weight: 600;
+}
+
+button:hover{
+    background-color: rgb(102, 102, 102);
+}
