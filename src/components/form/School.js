@@ -10,7 +10,7 @@ export default class School extends Component {
     const inputs = this.props.inputs;
     const index = this.props.index;
     return (
-      <div id="ed-start">
+      <div className="ed-start">
         <div>
           <label htmlFor={`education-school-${index}`}>School Name </label>
           <input

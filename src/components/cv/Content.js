@@ -15,7 +15,7 @@ export default class Content extends Component {
     const inputs = this.props.inputs;
 
     const schools = inputs.education.map((school, index) => (
-      <SchoolCv index={index} inputs={inputs} />
+      <SchoolCv index={index} inputs={inputs} key={index} />
     ));
     return (
       <div id="content">

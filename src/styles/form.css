@@ -40,6 +40,6 @@ button:hover{
     background-color: rgb(102, 102, 102);
 }
 
-#ed-start {
+.ed-start, .job-start {
     margin-top: 15px;
 }
