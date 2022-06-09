@@ -8,14 +8,15 @@ export default class School extends Component {
   }
   render() {
     const inputs = this.props.inputs;
+    const index = this.props.index;
     return (
       <div id="ed-start">
         <div>
           <label htmlFor="school">School Name </label>
           <input
-            value={inputs.education[this.props.index].school}
+            value={inputs.education[index].school}
             onChange={this.props.inputChange}
-            id={`education-school-${this.props.index}`}
+            id={`education-school-${index}`}
             type="text"
             required
           ></input>
@@ -23,9 +24,9 @@ export default class School extends Component {
         <div>
           <label htmlFor="degree">Degree Earned </label>
           <input
-            value={inputs.education[this.props.index].degree}
+            value={inputs.education[index].degree}
             onChange={this.props.inputChange}
-            id={`education-degree-${this.props.index}`}
+            id={`education-degree-${index}`}
             type="text"
             required
           ></input>
@@ -33,9 +34,9 @@ export default class School extends Component {
         <div>
           <label htmlFor="major">Major </label>
           <input
-            value={inputs.education[this.props.index].major}
+            value={inputs.education[index].major}
             onChange={this.props.inputChange}
-            id={`education-major-${this.props.index}`}
+            id={`education-major-${index}`}
             type="text"
             required
           ></input>
@@ -43,9 +44,9 @@ export default class School extends Component {
         <div>
           <label htmlFor="grad">Graduation Date </label>
           <input
-            value={inputs.education[this.props.index].grad}
+            value={inputs.education[index].grad}
             onChange={this.props.inputChange}
-            id={`education-grad-${this.props.index}`}
+            id={`education-grad-${index}`}
             type="text"
             required
           ></input>
