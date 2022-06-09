@@ -13,21 +13,7 @@ class App extends Component {
     this.addJob = this.addJob.bind(this);
     this.removeSchool = this.removeSchool.bind(this);
     this.removeJob = this.removeJob.bind(this);
-    // inputs for testing
-    // inputs: {
-    //   name: 'Lisa Frank',
-    //   jobTitle: 'Full Stack Web Developer',
-    //   email: 'lisa@email.email',
-    //   phone: 5555555555,
-    //   school: 'Fake School University',
-    //   degree: "Bachelor's of Fake",
-    //   major: 'Computer Science',
-    //   grad: 'Fake 999',
-    //   company: 'Fake Company',
-    //   title: 'CEO',
-    //   startDate: '1/1/1',
-    //   endDate: '9/9/9',
-    // },
+    this.createSample = this.createSample.bind(this);
 
     this.state = {
       inputs: {
@@ -40,6 +26,50 @@ class App extends Component {
       },
       formComplete: false,
     };
+  }
+  createSample(e) {
+    const newInputs = {
+      name: 'Lisa Frank',
+      jobTitle: 'Full Stack Web Developer',
+      email: 'lisafrankdev@lisafrankdevFake.fake',
+      phone: 5555555555,
+      education: [
+        {
+          school: 'Oregon State University',
+          degree: "Bachelor's of Science",
+          major: 'Computer Science',
+          grad: 'June 2024',
+        },
+        {
+          school: 'Oregon State University',
+          degree: "Master's of Science",
+          major: 'Computer Science',
+          grad: 'June 2028',
+        },
+      ],
+      work: [
+        {
+          company: 'Google',
+          title: 'Summer Internship',
+          startDate: '2023-06-06',
+          endDate: '2023-08-21',
+        },
+        {
+          company: 'Amazon',
+          title: 'Junior Web Dev',
+          startDate: '2024-07-12',
+          endDate: '',
+        },
+      ],
+    };
+    this.setState(
+      {
+        inputs: newInputs,
+      },
+      () => {
+        this.submitForm(e);
+      }
+    );
   }
   addSchool() {
     const newEds = [
@@ -125,6 +155,7 @@ class App extends Component {
         removeSchool={this.removeSchool}
         addJob={this.addJob}
         removeJob={this.removeJob}
+        createSample={this.createSample}
       />
     );
     return <div className="container">{content}</div>;

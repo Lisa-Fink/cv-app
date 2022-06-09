@@ -31,6 +31,10 @@ export default class Form extends Component {
           removeJob={this.props.removeJob}
         />
         <button id="submit-btn">Submit</button>
+
+        <button onClick={this.props.createSample} id="sample-btn">
+          Create Sample CV
+        </button>
       </form>
     );
   }
