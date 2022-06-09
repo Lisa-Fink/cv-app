@@ -9,7 +9,7 @@ class General extends Component {
   render() {
     const inputs = this.props.inputs;
     return (
-      <div>
+      <div id="general">
         <legend>General Information</legend>
         <div>
           <label htmlFor="name">Full Name </label>

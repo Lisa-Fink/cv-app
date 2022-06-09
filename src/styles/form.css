@@ -14,7 +14,7 @@ form > h1 {
     text-align: center;
 }
 
-form >div >div {
+form >div >div >div, #general>div {
     display: grid
 }
 
@@ -40,8 +40,8 @@ button:hover{
     background-color: rgb(102, 102, 102);
 }
 
-.ed-start, .job-start {
-    margin-top: 15px;
+.ed-start, .job-start, #general>div:nth-of-type(1) {
+    margin-top: 30px;
 }
 
 #submit-btn {
