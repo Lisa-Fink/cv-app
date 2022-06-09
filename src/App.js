@@ -10,6 +10,7 @@ class App extends Component {
     this.editForm = this.editForm.bind(this);
     this.inputChange = this.inputChange.bind(this);
     this.addSchool = this.addSchool.bind(this);
+    this.addJob = this.addJob.bind(this);
     // inputs for testing
     // inputs: {
     //   name: 'Lisa Frank',
@@ -33,10 +34,7 @@ class App extends Component {
         email: '',
         phone: '',
         education: [{ school: '', degree: '', major: '', grad: '' }],
-        company: '',
-        title: '',
-        startDate: '',
-        endDate: '',
+        work: [{ company: '', title: '', startDate: '', endDate: '' }],
       },
       formComplete: false,
     };
@@ -54,11 +52,24 @@ class App extends Component {
     });
   }
 
+  addJob() {
+    const newWork = [
+      ...this.state.inputs.work,
+      { company: '', title: '', startDate: '', endDate: '' },
+    ];
+    const newInputs = this.state.inputs;
+    newInputs.work = newWork;
+
+    this.setState({
+      inputs: newInputs,
+    });
+  }
+
   inputChange(e) {
     let newInputs = this.state.inputs;
     const id = e.target.id;
 
-    if ((id.slice(0, 4) === 'educ') | id.slice(0, 4 === 'work')) {
+    if ((id.slice(0, 4) === 'educ') | (id.slice(0, 4) === 'work')) {
       let [mainProp, propName, index] = id.split('-');
       newInputs[mainProp][index][propName] = e.target.value;
     } else {
@@ -90,6 +101,7 @@ class App extends Component {
         inputs={this.state.inputs}
         inputChange={this.inputChange}
         addSchool={this.addSchool}
+        addJob={this.addJob}
       />
     );
     return <div className="container">{content}</div>;

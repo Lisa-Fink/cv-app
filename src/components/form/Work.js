@@ -1,50 +1,26 @@
 import React, { Component } from 'react';
+import Job from './Job';
 
 class Work extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+  }
   render() {
-    const inputs = this.props.inputs;
+    const jobDivs = this.props.inputs.work.map((job, index) => (
+      <Job
+        key={index}
+        inputs={this.props.inputs}
+        index={index}
+        inputChange={this.props.inputChange}
+      />
+    ));
     return (
       <div>
         <legend>Work Experience</legend>
-        <div>
-          <label htmlFor="company">Company Name</label>
-          <input
-            value={inputs.company}
-            onChange={this.props.inputChange}
-            id="company"
-            type="text"
-            required
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="title">Job Title</label>
-          <input
-            value={inputs.title}
-            onChange={this.props.inputChange}
-            id="title"
-            type="text"
-            required
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="startDate">Date started</label>
-          <input
-            value={inputs.startDate}
-            onChange={this.props.inputChange}
-            id="startDate"
-            type="date"
-            required
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="endDate">Date Ended</label>
-          <input
-            value={inputs.endDate}
-            onChange={this.props.inputChange}
-            id="endDate"
-            type="date"
-          ></input>
-        </div>
+        {jobDivs}
+        <button onClick={this.props.addJob}>Add Job</button>
       </div>
     );
   }
