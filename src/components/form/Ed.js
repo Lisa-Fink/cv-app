@@ -7,24 +7,49 @@ class Ed extends Component {
     this.state = {};
   }
   render() {
+    const inputs = this.props.inputs;
     return (
       <div>
         <legend>Education</legend>
         <div>
           <label htmlFor="school">School Name </label>
-          <input id="school" type="text" required></input>
+          <input
+            value={inputs.school}
+            onChange={this.props.inputChange}
+            id="school"
+            type="text"
+            required
+          ></input>
         </div>
         <div>
           <label htmlFor="degree">Degree Earned </label>
-          <input id="degree" type="text" required></input>
+          <input
+            value={inputs.degree}
+            onChange={this.props.inputChange}
+            id="degree"
+            type="text"
+            required
+          ></input>
         </div>
         <div>
           <label htmlFor="major">Major </label>
-          <input id="major" type="text" required></input>
+          <input
+            value={inputs.major}
+            onChange={this.props.inputChange}
+            id="major"
+            type="text"
+            required
+          ></input>
         </div>
         <div>
           <label htmlFor="grad">Graduation Date </label>
-          <input id="grad" type="text" required></input>
+          <input
+            value={inputs.grad}
+            onChange={this.props.inputChange}
+            id="grad"
+            type="text"
+            required
+          ></input>
         </div>
       </div>
     );

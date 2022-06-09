@@ -14,6 +14,9 @@ export default class Cv extends Component {
       <div>
         <Header inputs={this.props.inputs} />
         <Content inputs={this.props.inputs} />
+        <div id="footer">
+          <button onClick={this.props.editForm}>Edit</button>
+        </div>
       </div>
     );
   }

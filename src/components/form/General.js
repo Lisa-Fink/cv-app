@@ -7,24 +7,49 @@ class General extends Component {
     this.state = {};
   }
   render() {
+    const inputs = this.props.inputs;
     return (
       <div>
         <legend>General Information</legend>
         <div>
           <label htmlFor="name">Full Name </label>
-          <input id="name" type="text" required></input>
+          <input
+            value={inputs.name}
+            onChange={this.props.inputChange}
+            id="name"
+            type="text"
+            required
+          ></input>
         </div>
         <div>
-          <label htmlFor="job-title">Job Title </label>
-          <input id="job-title" type="text" required></input>
+          <label htmlFor="jobTitle">Job Title </label>
+          <input
+            value={inputs.jobTitle}
+            onChange={this.props.inputChange}
+            id="jobTitle"
+            type="text"
+            required
+          ></input>
         </div>
         <div>
           <label htmlFor="email">Email </label>
-          <input id="email" type="email" required></input>
+          <input
+            value={inputs.email}
+            onChange={this.props.inputChange}
+            id="email"
+            type="email"
+            required
+          ></input>
         </div>
         <div>
           <label htmlFor="phone">Phone </label>
-          <input id="phone" type="tel" required></input>
+          <input
+            value={inputs.phone}
+            onChange={this.props.inputChange}
+            id="phone"
+            type="tel"
+            required
+          ></input>
         </div>
       </div>
     );
