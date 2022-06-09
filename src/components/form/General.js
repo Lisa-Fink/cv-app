@@ -48,6 +48,8 @@ class General extends Component {
             onChange={this.props.inputChange}
             id="phone"
             type="tel"
+            minLength="9"
+            maxLength="9"
             required
           ></input>
         </div>
