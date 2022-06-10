@@ -36,13 +36,13 @@ class App extends Component {
       education: [
         {
           school: 'Oregon State University',
-          degree: "Bachelor's of Science",
+          degree: 'Bachelor of Science',
           major: 'Computer Science',
           grad: 'June 2024',
         },
         {
           school: 'Oregon State University',
-          degree: "Master's of Science",
+          degree: 'Master of Science',
           major: 'Computer Science',
           grad: 'June 2028',
         },
