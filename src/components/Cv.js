@@ -1,23 +1,18 @@
-import React, { Component } from 'react';
 import Content from './cv/Content';
 import Header from './cv/Header';
 import '../styles/content.css';
+import React from 'react';
 
-export default class Cv extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  }
-  render() {
-    return (
-      <div>
-        <Header inputs={this.props.inputs} />
-        <Content inputs={this.props.inputs} />
-        <div id="footer">
-          <button onClick={this.props.editForm}>Edit</button>
-        </div>
+function Cv(props) {
+  return (
+    <div>
+      <Header inputs={props.inputs} />
+      <Content inputs={props.inputs} />
+      <div id="footer">
+        <button onClick={props.editForm}>Edit</button>
       </div>
-    );
-  }
+    </div>
+  );
 }
+
+export default Cv;

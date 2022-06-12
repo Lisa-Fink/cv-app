@@ -1,19 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class RmButton extends Component {
-  constructor(props) {
-    super(props);
+function RmButton(props) {
+  const button = <button onClick={props.func}>Remove {props.category}</button>;
 
-    this.state = {};
-  }
-  render() {
-    const button = (
-      <button onClick={this.props.func}>Remove {this.props.category}</button>
-    );
-
-    const showButton =
-      this.props.inputs[this.props.propName].length > 1 ? button : null;
-
-    return showButton;
-  }
+  const showButton = props.inputs[props.propName].length > 1 ? button : null;
+  return showButton;
 }
+
+export default RmButton;

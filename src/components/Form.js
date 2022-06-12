@@ -1,41 +1,33 @@
-import React, { Component } from 'react';
 import Ed from './form/Ed';
 import General from './form/General';
 import Work from './form/Work';
 import '../styles/form.css';
+import React from 'react';
 
-export default class Form extends Component {
-  constructor(props) {
-    super(props);
+function FormHooks(props) {
+  return (
+    <form onSubmit={props.submit}>
+      <h1>CV Form</h1>
+      <General inputs={props.inputs} inputChange={props.inputChange} />
+      <Ed
+        inputs={props.inputs}
+        inputChange={props.inputChange}
+        addSchool={props.addSchool}
+        removeSchool={props.removeSchool}
+      />
+      <Work
+        inputs={props.inputs}
+        inputChange={props.inputChange}
+        addJob={props.addJob}
+        removeJob={props.removeJob}
+      />
+      <button id="submit-btn">Submit</button>
 
-    this.state = {};
-  }
-  render() {
-    return (
-      <form onSubmit={this.props.submit}>
-        <h1>CV Form</h1>
-        <General
-          inputs={this.props.inputs}
-          inputChange={this.props.inputChange}
-        />
-        <Ed
-          inputs={this.props.inputs}
-          inputChange={this.props.inputChange}
-          addSchool={this.props.addSchool}
-          removeSchool={this.props.removeSchool}
-        />
-        <Work
-          inputs={this.props.inputs}
-          inputChange={this.props.inputChange}
-          addJob={this.props.addJob}
-          removeJob={this.props.removeJob}
-        />
-        <button id="submit-btn">Submit</button>
-
-        <button onClick={this.props.createSample} id="sample-btn">
-          Create Sample CV
-        </button>
-      </form>
-    );
-  }
+      <button onClick={props.createSample} id="sample-btn">
+        Create Sample CV
+      </button>
+    </form>
+  );
 }
+
+export default FormHooks;
